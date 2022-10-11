@@ -1,8 +1,12 @@
 import './bootstrap';
-const channel = Echo.channel('my-channel.1');
-channel.subscribed(function (){
-    console.log('subscribed!')
-}).listen('.my-event', (e)=>{
-    console.log(e)
-})
 
+let onlineUsers = 0;
+
+function update_online_counter() {
+    document.getElementById('online').textContent = '' + onlineUsers;
+}
+
+Echo.channel('passport_detail.1')
+    .listen('.my-event', (e)=>{
+        console.log(e)
+    })

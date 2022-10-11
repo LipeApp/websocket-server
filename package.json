@@ -13,6 +13,7 @@
         "vite": "^3.0.0"
     },
     "dependencies": {
+        "cookiejs": "^2.1.2",
         "pusher-js": "^7.4.0"
     }
 }

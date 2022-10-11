@@ -21,10 +21,12 @@ class Test implements ShouldBroadcast
      *
      * @return void
      */
-    public $user;
-    public function __construct($user)
+    public $passport;
+    public $id;
+    public function __construct($id, $passport)
     {
-        $this->user = $user;
+        $this->id = $id;
+        $this->passport = $passport;
     }
 
     /**
@@ -34,7 +36,7 @@ class Test implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new Channel('my-channel.1');
+        return new Channel('passport_detail.'.$this->id);
     }
 
     public function broadcastAs(){
