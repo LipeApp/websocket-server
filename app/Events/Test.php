@@ -32,14 +32,15 @@ class Test implements ShouldBroadcast
     /**
      * Get the channels the event should broadcast on.
      *
-     * @return \Illuminate\Broadcasting\Channel|array
+     * @return Channel|array
      */
-    public function broadcastOn()
+    public function broadcastOn(): Channel|array
     {
-        return new Channel('passport_detail.'.$this->id);
+        return new Channel('channel.'.$this->id);
     }
 
-    public function broadcastAs(){
+    public function broadcastAs(): string
+    {
         return 'my-event';
     }
 }
